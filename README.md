@@ -6,6 +6,10 @@ Using PatrickAlphaC's tutorial on creating an NFT project I adapted a few more t
 
 - Programmatically Pinning IPFS links with Pinata calling it's API. Usefull for when my IPFS node goes down
 
+- OpenSea refresh script. One click refresh all metadata using OpenSea API
+
+- Mass Minting Function (TODO : Funding more than 1 LINK as it often runs out when mass minting)
+
 # OPENSEA LINK
 
 https://testnets.opensea.io/collection/humanz

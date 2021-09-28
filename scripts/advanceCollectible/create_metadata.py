@@ -14,18 +14,26 @@ class AuthenticationError(Error):
         self.message = message
 
 def main():
+    print(entry())
+
+def entry():
     print("Working on "+network.show_active())
     advanced_collectible = AdvancedNFT[len(AdvancedNFT) - 1]
     number_of_tokens = advanced_collectible.tokenCounter()
     print(number_of_tokens)
     write_metadata(number_of_tokens, advanced_collectible)
+    return("Metadata Generated")
 
 def write_metadata(number_of_tokens, nft_contract):
-    with open("./metadata/uris", "r") as file:
+    try:
+        with open("./metadata/uris", "r") as file:
             try:
                 uris = json.load(file)
             except(JSONDecodeError):
                 uris = []
+    except(FileNotFoundError):
+        uris = []
+
 
     for token_id in range(number_of_tokens):
         collectible_metadata = sample_metadata.metadata_template
